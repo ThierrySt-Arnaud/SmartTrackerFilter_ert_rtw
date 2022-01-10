@@ -1,0 +1,37 @@
+%implements s3_b0_gc8r_Terminate "C"
+
+%function Terminate(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,14,2,0)
+%<SLibCG_TrackDW(3)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,14,1,0)
+%<SLibCG_TrackDW(3)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,14,0,0)
+%<SLibCG_TrackDW(3)>
+%endif
+
+/* Terminate for MATLABSystem: '<Root>/Decimator100' */
+%<SLibCG_DumpSSCode("/*@[f4b97*/",(SLibCGCallSubFcn("matlabCodegenHandle_matlabCo_bg", ["&/*@>f5494*/rtDW->/*@>f5493*/obj_m"], 0, 14, 0)),"/*@]*/")>;
+/* Terminate for MATLABSystem: '<Root>/Decimator50' */
+%<SLibCG_DumpSSCode("/*@[f4bae*/",(SLibCGCallSubFcn("matlabCodegenHandle_matlabCod_b", ["&/*@>f54a1*/rtDW->/*@>f54a0*/obj_d"], 0, 14, 1)),"/*@]*/")>;
+/* Terminate for MATLABSystem: '<Root>/Decimator25' */
+%<SLibCG_DumpSSCode("/*@[f4bc5*/",(SLibCGCallSubFcn("matlabCodegenHandle_matlabCodeg", ["&/*@>f54ae*/rtDW->/*@>f54ad*/obj"], 0, 14, 2)),"/*@]*/")>;
+%closefile cfgTxt
+%<cfgTxt>
+%endfunction
+%function TerminateFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Terminate(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 14, fcnProtoType)>
+%endfunction

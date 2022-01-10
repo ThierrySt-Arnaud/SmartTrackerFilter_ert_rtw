@@ -1,0 +1,137 @@
+%implements s3_b0_gc8r_Outputs "C"
+
+%function Outputs(block, system) Output
+%assign cfgTxt = ""
+%openfile cfgTxt
+%assign localVarDecl = ""
+%openfile localVarDecl
+
+real32_T b_y1[2];
+real32_T b_Z1[2];
+real32_T y2[2];
+real32_T branch2Carry;
+real32_T rtb_gToMperS;
+real32_T tmp[2];
+real32_T rtb_Decimator100_0[2];
+real32_T tmp_0;
+real32_T c_x_idx_0;
+real32_T c_x_idx_2;
+%closefile localVarDecl
+%assign _modelSS = ""
+
+%if SLibCG_FcnCallArgAccessed(0,13,1,2)
+%<SLibCG_TrackDW(3)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,13,1,4)
+%<SLibCG_TrackDW(3)>
+%endif
+
+%if SLibCG_FcnCallArgAccessed(0,13,0,1)
+%<SLibCG_TrackDW(3)>
+%endif
+%if SLibCG_FcnCallArgAccessed(0,13,0,2)
+%<SLibCG_TrackDW(3)>
+%endif
+
+%<SLibCG_TrackDW(3)>\
+%<SLibCG_TrackEO(1)>\
+%<SLibCG_TrackEO(0)>\
+%<SLibCG_TrackEI(0)>\
+/* Start for MATLABSystem: '<Root>/Decimator100' incorporates:
+ *  Inport: '<Root>/rawAccelIn'
+ *  Inport: '<Root>/rawAccelIn'
+ */
+/*@>da4ce*/if (/*@>f3d2e*/rtDW->/*@>f5283*/obj_m.TunablePropsChanged) {
+    /*@>f3d35*/rtDW->/*@>f5286*/obj_m./*@>f51f0*/TunablePropsChanged/*@>da4c5*/ = /*@>f08ba*/false;
+}
+rtb_gToMperS/*@>ef5d0*/ = (/*@>f3a32*/rtU_rawAccelIn/*@>f3a34*/[/*@>f3a31*/0]/*@>ef5dc*/ - /*@>f3d3c*/rtDW->/*@>f5289*/obj_m./*@>f523b*/pStates./*@>f523e*/Branch1/*@>f3a41*/[/*@>f3a36*/1])/*@>f0eee*/ * /*@>f3d43*/rtDW->/*@>f528c*/obj_m.pBranchCoef1.FirstOrderSectionCoeffs/*@>ef5d2*/ + /*@>f3d4a*/rtDW->/*@>f528f*/obj_m./*@>f5241*/pStates./*@>f5244*/Branch1/*@>f3a4e*/[/*@>f3a43*/0];
+/*@>f0ac0*/c_x_idx_0 = rtb_gToMperS;
+rtb_gToMperS/*@>ef612*/ = (/*@>f3a51*/rtU_rawAccelIn/*@>f3a53*/[/*@>f3a50*/2]/*@>ef61e*/ - rtb_gToMperS)/*@>f0eea*/ * /*@>f3d51*/rtDW->/*@>f5292*/obj_m.pBranchCoef1.FirstOrderSectionCoeffs/*@>ef614*/ + /*@>f3a56*/rtU_rawAccelIn/*@>f3a58*/[/*@>f3a55*/0];
+/*@>f0ac2*/branch2Carry = rtb_gToMperS;
+rtb_gToMperS/*@>ef654*/ = (/*@>f3a5b*/rtU_rawAccelIn/*@>f3a5d*/[/*@>f3a5a*/4]/*@>ef660*/ - rtb_gToMperS)/*@>f0ee6*/ * /*@>f3d58*/rtDW->/*@>f5295*/obj_m.pBranchCoef1.FirstOrderSectionCoeffs/*@>ef656*/ + /*@>f3a60*/rtU_rawAccelIn/*@>f3a62*/[/*@>f3a5f*/2];
+/*@>f0ac4*/c_x_idx_2 = rtb_gToMperS;
+rtb_gToMperS/*@>ef696*/ = (/*@>f3a65*/rtU_rawAccelIn/*@>f3a67*/[/*@>f3a64*/6]/*@>ef6a2*/ - rtb_gToMperS)/*@>f0ee2*/ * /*@>f3d5f*/rtDW->/*@>f5298*/obj_m.pBranchCoef1.FirstOrderSectionCoeffs/*@>ef698*/ + /*@>f3a6a*/rtU_rawAccelIn/*@>f3a6c*/[/*@>f3a69*/4];
+/*@>f3d66*/rtDW->/*@>f529b*/obj_m./*@>f51fc*/pStates./*@>f51f9*/Branch1/*@>ecafe*/[/*@>f0928*/0]/*@>da620*/ = /*@>f3a6f*/rtU_rawAccelIn/*@>f3a71*/[/*@>f3a6e*/6];
+/*@>f3d6d*/rtDW->/*@>f529e*/obj_m./*@>f5202*/pStates./*@>f51ff*/Branch1/*@>ecb3a*/[/*@>f092d*/1]/*@>da627*/ = rtb_gToMperS;
+/*@>f0aba*/tmp_0/*@>ecc96*/ = /*@>f3d74*/rtDW->/*@>f52a1*/obj_m.pBranch2Carry;
+/*@>f3d7b*/rtDW->/*@>f52a4*/obj_m./*@>f51ed*/pBranch2Carry/*@>da56a*/ = /*@>f3a74*/rtU_rawAccelIn/*@>f3a76*/[/*@>f3a73*/7];
+/* Start for MATLABSystem: '<Root>/Decimator50' incorporates:
+ *  Inport: '<Root>/rawAccelIn'
+ *  Inport: '<Root>/rawAccelIn'
+ *  MATLABSystem: '<Root>/Decimator100'
+ *  MATLABSystem: '<Root>/Decimator100'
+ */
+/*@>dac5f*/if (/*@>f3d82*/rtDW->/*@>f52a7*/obj_d.TunablePropsChanged) {
+    /*@>f3d89*/rtDW->/*@>f52aa*/obj_d./*@>f51ea*/TunablePropsChanged/*@>dac56*/ = /*@>f08b2*/false;
+}
+/*@>f09fa*/rtb_Decimator100_0/*@>ef795*/[/*@>f09fc*/0]/*@>ef794*/ = (/*@>f1912*/c_x_idx_0/*@>f1910*/ + /*@>f1914*/tmp_0)/*@>f190e*/ * /*@>f190f*/0.5F;
+/*@>f09fd*/rtb_Decimator100_0/*@>ef7a5*/[/*@>f09ff*/1]/*@>ef7a4*/ = (/*@>f191b*/c_x_idx_2/*@>f1919*/ + /*@>f3a79*/rtU_rawAccelIn/*@>f3a7b*/[/*@>f3a78*/3])/*@>f1917*/ * /*@>f1918*/0.5F;
+%<SLibCG_DumpSSCode("/*@[f4b65*/",(SLibCGCallSubFcn("AllpassMinMult_stepMinMultCasca", ["/*@>f53e1*/rtb_Decimator100_0", "/*@>f53ee*/rtDW->/*@>f53ed*/obj_d./*@>f53ec*/pStates./*@>f53eb*/Branch1", "/*@>f53fe*/rtDW->/*@>f53fd*/obj_d.pBranchCoef1.FirstOrderSectionCoeffs", "/*@>f540b*/b_y1", "/*@>f5415*/b_Z1"], 0, 13, 0)),"/*@]*/")>;
+/*@>f0a04*/rtb_Decimator100_0/*@>ef7c3*/[/*@>f0a13*/0]/*@>ef7c2*/ = (/*@>f1924*/branch2Carry/*@>f1922*/ + /*@>f3a7e*/rtU_rawAccelIn/*@>f3a80*/[/*@>f3a7d*/1])/*@>f1920*/ * /*@>f1921*/0.5F;
+/*@>f0a06*/tmp/*@>ef7d2*/[/*@>f0a14*/0]/*@>ef7d1*/ = /*@>f3d9e*/rtDW->/*@>f52b3*/obj_d./*@>f5247*/pStates./*@>f524a*/Branch2/*@>f3a8d*/[/*@>f3a82*/0];
+/*@>f3da5*/rtDW->/*@>f52b6*/obj_d./*@>f5214*/pStates./*@>f5211*/Branch1/*@>ef7e1*/[/*@>f0a16*/0]/*@>ef7e0*/ = /*@>f3a90*/b_Z1/*@>f3a92*/[/*@>f3a8f*/0];
+/*@>f0a1b*/rtb_Decimator100_0/*@>ef80a*/[/*@>f0a2a*/1]/*@>ef809*/ = (rtb_gToMperS/*@>f1934*/ + /*@>f3a95*/rtU_rawAccelIn/*@>f3a97*/[/*@>f3a94*/5])/*@>f1932*/ * /*@>f1933*/0.5F;
+/*@>f0a1d*/tmp/*@>ef819*/[/*@>f0a2b*/1]/*@>ef818*/ = /*@>f3dac*/rtDW->/*@>f52b9*/obj_d./*@>f524d*/pStates./*@>f5250*/Branch2/*@>f3aa4*/[/*@>f3a99*/1];
+/*@>f3db3*/rtDW->/*@>f52bc*/obj_d./*@>f521a*/pStates./*@>f5217*/Branch1/*@>ef828*/[/*@>f0a2d*/1]/*@>ef827*/ = /*@>f3aa7*/b_Z1/*@>f3aa9*/[/*@>f3aa6*/1];
+%<SLibCG_DumpSSCode("/*@[f4b80*/",(SLibCGCallSubFcn("AllpassMinMult_stepMinMultCasca", ["/*@>f541f*/rtb_Decimator100_0", "/*@>f5429*/tmp", "/*@>f5436*/rtDW->/*@>f5435*/obj_d.pBranchCoef2.FirstOrderSectionCoeffs", "/*@>f5443*/y2", "/*@>f5450*/rtDW->/*@>f544f*/obj_d./*@>f544e*/pStates./*@>f544d*/Branch2"], 0, 13, 1)),"/*@]*/")>;
+/* MATLABSystem: '<Root>/Decimator50' */
+/*@>f0a2e*/b_Z1/*@>ef84f*/[/*@>f0aa9*/0]/*@>ef84e*/ = (/*@>f3aac*/b_y1/*@>f3aae*/[/*@>f3aab*/0]/*@>ef85a*/ + /*@>f3dc8*/rtDW->/*@>f52c5*/obj_d.pBranch2Carry)/*@>f0e8c*/ * /*@>f0aaa*/0.5F;
+/*@>f0a33*/b_Z1/*@>ef86b*/[/*@>f0aab*/1]/*@>ef86a*/ = (/*@>f3ab1*/b_y1/*@>f3ab3*/[/*@>f3ab0*/1]/*@>ef876*/ + /*@>f3ab6*/y2/*@>f3ab8*/[/*@>f3ab5*/0])/*@>f0e88*/ * /*@>f0aac*/0.5F;
+/* Start for MATLABSystem: '<Root>/Decimator50' */
+/*@>f3dcf*/rtDW->/*@>f52c8*/obj_d./*@>f51e7*/pBranch2Carry/*@>dad03*/ = /*@>f3abb*/y2/*@>f3abd*/[/*@>f3aba*/1];
+/* Start for MATLABSystem: '<Root>/Decimator25' incorporates:
+ *  MATLABSystem: '<Root>/Decimator50'
+ */
+/*@>db20a*/if (/*@>f3dd6*/rtDW->/*@>f52cb*/obj.TunablePropsChanged) {
+    /*@>f3ddd*/rtDW->/*@>f52ce*/obj./*@>f51e4*/TunablePropsChanged/*@>db201*/ = /*@>f08a6*/false;
+}
+/*@>f0a48*/rtb_gToMperS/*@>ef8fd*/ = (/*@>f3ac0*/b_Z1/*@>f3ac2*/[/*@>f3abf*/0]/*@>ef90c*/ - /*@>f3de4*/rtDW->/*@>f52d1*/obj./*@>f5253*/pStates./*@>f5256*/Branch1/*@>f3acf*/[/*@>f3ac4*/1])/*@>f0e6e*/ * /*@>f3deb*/rtDW->/*@>f52d4*/obj./*@>f5259*/pBranchCoef1./*@>f525c*/FirstOrderSectionCoeffs/*@>f3adc*/[/*@>f3ad1*/0]/*@>ef8ff*/ + /*@>f3df2*/rtDW->/*@>f52d7*/obj./*@>f525f*/pStates./*@>f5262*/Branch1/*@>f3ae9*/[/*@>f3ade*/0];
+/*@>f0af4*/branch2Carry/*@>ef926*/ = /*@>f1854*/rtb_gToMperS;
+/*@>f2526*/c_x_idx_2/*@>ef956*/ = /*@>f0a6f*/rtb_gToMperS;
+/*@>f0a71*/rtb_gToMperS/*@>ef95b*/ = (/*@>f0a79*/rtb_gToMperS/*@>ef96a*/ - /*@>f3df9*/rtDW->/*@>f52da*/obj./*@>f5265*/pStates./*@>f5268*/Branch1/*@>f3af6*/[/*@>f3aeb*/3])/*@>f0e68*/ * /*@>f3e00*/rtDW->/*@>f52dd*/obj./*@>f526b*/pBranchCoef1./*@>f526e*/FirstOrderSectionCoeffs/*@>f3b03*/[/*@>f3af8*/1]/*@>ef95d*/ + /*@>f3e07*/rtDW->/*@>f52e0*/obj./*@>f5271*/pStates./*@>f5274*/Branch1/*@>f3b10*/[/*@>f3b05*/2];
+/*@>f089e*/c_x_idx_0/*@>db643*/ = (/*@>f3b13*/b_Z1/*@>f3b15*/[/*@>f3b12*/1]/*@>e8390*/ - /*@>f3e0e*/rtDW->/*@>f52e3*/obj./*@>f5277*/pStates./*@>f527a*/Branch2/*@>f3b22*/[/*@>f3b17*/1])/*@>f0e62*/ * /*@>f3e15*/rtDW->/*@>f52e6*/obj.pBranchCoef2.FirstOrderSectionCoeffs/*@>db664*/ + /*@>f3e1c*/rtDW->/*@>f52e9*/obj./*@>f527d*/pStates./*@>f5280*/Branch2/*@>f3b2f*/[/*@>f3b24*/0];
+/*@>f3e23*/rtDW->/*@>f52ec*/obj./*@>f5208*/pStates./*@>f5205*/Branch2/*@>ed3be*/[/*@>f0955*/0]/*@>db583*/ = /*@>f3b32*/b_Z1/*@>f3b34*/[/*@>f3b31*/1];
+/*@>f3e2a*/rtDW->/*@>f52ef*/obj./*@>f520e*/pStates./*@>f520b*/Branch2/*@>ed3fa*/[/*@>f095a*/1]/*@>db58a*/ = /*@>f08e4*/c_x_idx_0;
+/*@>f3e31*/rtDW->/*@>f52f2*/obj./*@>f5220*/pStates./*@>f521d*/Branch1/*@>ef99d*/[/*@>f0a8e*/0]/*@>ef99c*/ = /*@>f3b37*/b_Z1/*@>f3b39*/[/*@>f3b36*/0];
+/*@>f3e38*/rtDW->/*@>f52f5*/obj./*@>f5226*/pStates./*@>f5223*/Branch1/*@>ef9af*/[/*@>f0a93*/1]/*@>ef9ae*/ = /*@>f0afc*/branch2Carry;
+/*@>f3e3f*/rtDW->/*@>f52f8*/obj./*@>f522c*/pStates./*@>f5229*/Branch1/*@>ef9c1*/[/*@>f0a98*/2]/*@>ef9c0*/ = /*@>f0afe*/c_x_idx_2;
+/*@>f3e46*/rtDW->/*@>f52fb*/obj./*@>f5232*/pStates./*@>f522f*/Branch1/*@>ef9d3*/[/*@>f0a9d*/3]/*@>ef9d2*/ = /*@>f185a*/rtb_gToMperS;
+/*@>f08a4*/branch2Carry/*@>db295*/ = /*@>f3e4d*/rtDW->/*@>f52fe*/obj.pBranch2Carry;
+/*@>f3e54*/rtDW->/*@>f5301*/obj./*@>f51e1*/pBranch2Carry/*@>db29b*/ = /*@>f08e6*/c_x_idx_0;
+/* Gain: '<Root>/gToMperS' incorporates:
+ *  MATLABSystem: '<Root>/Decimator25'
+ *  MATLABSystem: '<Root>/Decimator25'
+ */
+/*@>f08d7*/rtb_gToMperS/*@>d97a7*/ = (/*@>f0902*/rtb_gToMperS/*@>ea4cb*/ + /*@>f0904*/branch2Carry)/*@>f0e2c*/ * /*@>f0ab1*/0.5F/*@>f0e28*/ * /*@>f096b*/9.81F;
+/* S-Function (sdspbiquad): '<S1>/Digital Filter' */
+/*@>f08cd*/branch2Carry/*@>d9e59*/ = 0.0445333347F/*@>f0e24*/ * /*@>f08d1*/rtb_gToMperS;
+/*@>f08cb*/c_x_idx_0/*@>d9e6d*/ = 1.00001109F/*@>f0e20*/ * /*@>f08e8*/branch2Carry/*@>e8906*/ + /*@>f3e5b*/rtDW->/*@>f5304*/DigitalFilter_FILT_STATES/*@>f3b3e*/[/*@>f3b3b*/0];
+/*@>f3e62*/rtDW->/*@>f5307*/DigitalFilter_FILT_STATES/*@>ed529*/[/*@>f0ab3*/0]/*@>d9e8b*/ = (-2.0F/*@>f0e18*/ * /*@>f08f4*/branch2Carry/*@>e9c04*/ + /*@>f3e69*/rtDW->/*@>f530a*/DigitalFilter_FILT_STATES/*@>f3b43*/[/*@>f3b40*/1])/*@>e8929*/ - -1.7073499F/*@>f0e1c*/ * /*@>f08ea*/c_x_idx_0;
+/*@>f3e70*/rtDW->/*@>f530d*/DigitalFilter_FILT_STATES/*@>ed57a*/[/*@>f0ab5*/1]/*@>d9ea5*/ = 1.00000763F/*@>f0e10*/ * /*@>f08f6*/branch2Carry/*@>e8943*/ - 0.753310323F/*@>f0e14*/ * /*@>f08ec*/c_x_idx_0;
+/*@>f08c5*/c_x_idx_0/*@>d9ebe*/ = 2.0F/*@>f0e0c*/ * /*@>f08ee*/c_x_idx_0/*@>e8953*/ + /*@>f3e77*/rtDW->/*@>f5310*/DigitalFilter_FILT_STATES/*@>f3b48*/[/*@>f3b45*/2];
+/*@>f3e7e*/rtDW->/*@>f5313*/DigitalFilter_FILT_STATES/*@>ed62a*/[/*@>f0ab7*/2]/*@>d9edc*/ = /*@>f3e85*/rtDW->/*@>f5316*/DigitalFilter_FILT_STATES/*@>f3b4d*/[/*@>f3b4a*/3]/*@>e8975*/ - 0.0131777413F/*@>f0e08*/ * /*@>f08f0*/c_x_idx_0;
+/*@>f3e8c*/rtDW->/*@>f5319*/DigitalFilter_FILT_STATES/*@>ed67d*/[/*@>f0ab9*/3]/*@>d9ef6*/ = 0.0F/*@>e898d*/ - 0.00781916268F/*@>f0e04*/ * /*@>f08f2*/c_x_idx_0;
+/*@>f08cf*/branch2Carry/*@>d9eff*/ = 9.62967587F/*@>f0e00*/ * /*@>f08c3*/c_x_idx_0;
+/* Outport: '<Root>/gravOut' incorporates:
+ *  Sum: '<Root>/gravExtractor'
+ */
+*/*@>f3c9c*/rtY_gravOut/*@>d9b21*/ = /*@>f0906*/rtb_gToMperS/*@>ea4d2*/ - /*@>f0908*/branch2Carry;
+/* Outport: '<Root>/speedOut' incorporates:
+ *  DiscreteIntegrator: '<Root>/SpeedIntegrator'
+ */
+*/*@>f3ca0*/rtY_speedOut/*@>d9b98*/ = /*@>f3e93*/rtDW->/*@>f531c*/SpeedIntegrator_DSTATE;
+/* Update for DiscreteIntegrator: '<Root>/SpeedIntegrator' */
+/*@>f3e9a*/rtDW->/*@>f531f*/SpeedIntegrator_DSTATE/*@>f4ef6*/ += /*@>f096c*/0.005F/*@>f0dfc*/ * /*@>f08c1*/branch2Carry;
+%<SLibInsertSolverResetCode()>\
+%closefile cfgTxt
+%<cfgTxt>
+%<LibSetSystemField(system, "CachedOutputLocalVars", localVarDecl)>
+%endfunction
+%function OutputsFcnProtoType(block, system) Output
+%assign fcnProtoType = ""
+%openfile fcnProtoType
+static void Outputs(\
+%assign comma = ""
+%closefile fcnProtoType
+%<SLibCG_SetFcnProtoType(0, 13, fcnProtoType)>
+%endfunction
