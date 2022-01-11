@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'SmartTrackerFilter'. 
 ## 
 ## Makefile     : SmartTrackerFilter.mk
-## Generated on : Sun Jan 09 17:51:34 2022
+## Generated on : Mon Jan 10 18:58:35 2022
 ## MATLAB Coder version: 4.0 (R2018a)
 ## 
 ## Build Info:
@@ -34,7 +34,7 @@ ARCH                      = maci64
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
-TGT_FCN_LIB               = GNU
+TGT_FCN_LIB               = ISO_C
 MODEL_HAS_DYNAMICALLY_LOADED_SFCNS = 0
 MODELREF_LINK_RSPFILE_NAME = SmartTrackerFilter_ref.rsp
 RELATIVE_PATH_TO_ANCHOR   = ..
@@ -199,9 +199,9 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=0 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=1 -DINTEGER_CODE=0 -DMT=0
+DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=0 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
 DEFINES_IMPLIED = -DTID01EQ=0
-DEFINES_STANDARD = -DMODEL=SmartTrackerFilter -DNUMST=1 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0 -DUNIX
+DEFINES_STANDARD = -DMODEL=SmartTrackerFilter -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0 -DUNIX
 
 DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_STANDARD)
 
@@ -209,7 +209,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter.c
+SRCS = $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter.c $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter_data.c
 
 MAIN_SRC = $(START_DIR)/SmartTrackerFilter_ert_rtw/ert_main.c
 
@@ -219,7 +219,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = SmartTrackerFilter.o
+OBJS = SmartTrackerFilter.o SmartTrackerFilter_data.o
 
 MAIN_OBJ = ert_main.o
 
