@@ -17,6 +17,10 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["SmartTrackerFilter:157"] = {rtwname: "<Root>/valueRead"};
 	this.rtwnameHashMap["<Root>/Buffer"] = {sid: "SmartTrackerFilter:153"};
 	this.sidHashMap["SmartTrackerFilter:153"] = {rtwname: "<Root>/Buffer"};
+	this.rtwnameHashMap["<Root>/Buffer1"] = {sid: "SmartTrackerFilter:200"};
+	this.sidHashMap["SmartTrackerFilter:200"] = {rtwname: "<Root>/Buffer1"};
+	this.rtwnameHashMap["<Root>/Buffer2"] = {sid: "SmartTrackerFilter:201"};
+	this.sidHashMap["SmartTrackerFilter:201"] = {rtwname: "<Root>/Buffer2"};
 	this.rtwnameHashMap["<Root>/Constant"] = {sid: "SmartTrackerFilter:196"};
 	this.sidHashMap["SmartTrackerFilter:196"] = {rtwname: "<Root>/Constant"};
 	this.rtwnameHashMap["<Root>/Constant1"] = {sid: "SmartTrackerFilter:199"};
@@ -63,8 +67,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["SmartTrackerFilter:135:1"] = {rtwname: "<S1>/In1"};
 	this.rtwnameHashMap["<S1>/Check Signal Attributes"] = {sid: "SmartTrackerFilter:135:2"};
 	this.sidHashMap["SmartTrackerFilter:135:2"] = {rtwname: "<S1>/Check Signal Attributes"};
-	this.rtwnameHashMap["<S1>/Digital Filter"] = {sid: "SmartTrackerFilter:135:30"};
-	this.sidHashMap["SmartTrackerFilter:135:30"] = {rtwname: "<S1>/Digital Filter"};
+	this.rtwnameHashMap["<S1>/Digital Filter"] = {sid: "SmartTrackerFilter:135:26"};
+	this.sidHashMap["SmartTrackerFilter:135:26"] = {rtwname: "<S1>/Digital Filter"};
 	this.rtwnameHashMap["<S1>/Out1"] = {sid: "SmartTrackerFilter:135:4"};
 	this.sidHashMap["SmartTrackerFilter:135:4"] = {rtwname: "<S1>/Out1"};
 	this.rtwnameHashMap["<S2>/S"] = {sid: "SmartTrackerFilter:188:132"};

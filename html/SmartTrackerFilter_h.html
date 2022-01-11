@@ -21,11 +21,11 @@
 <tr name="5" id="5">
 <td><a id="l5" class='ln'>5</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="6" id="6">
-<td><a id="l6" class='ln'>6</a></td><td><span class="ct"> * Model version                  : 1.9</span></td></tr>
+<td><a id="l6" class='ln'>6</a></td><td><span class="ct"> * Model version                  : 1.11</span></td></tr>
 <tr name="7" id="7">
 <td><a id="l7" class='ln'>7</a></td><td><span class="ct"> * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018</span></td></tr>
 <tr name="8" id="8">
-<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * C/C++ source code generated on : Mon Jan 10 19:20:52 2022</span></td></tr>
+<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * C/C++ source code generated on : Mon Jan 10 21:56:51 2022</span></td></tr>
 <tr name="9" id="9">
 <td><a id="l9" class='ln'>9</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="10" id="10">
@@ -81,153 +81,169 @@
 <tr name="35" id="35">
 <td><a id="l35" class='ln'>35</a></td><td>  <a id="35c3" class="tk">dsp_simulink_IIRHalfbandDeci_bg</a> <a id="35c35" class="tk">obj_m</a>;<span class="ct">/* '<a class="ct blk" blk_line="35">&lt;Root&gt;/Decimator100</a>' */</span></td></tr>
 <tr name="36" id="36">
-<td><a id="l36" class='ln'>36</a></td><td>  <a id="36c3" class="tk">real32_T</a> <a id="36c12" class="tk">Buffer_CircBuf</a>[16];         <span class="ct">/* '<a class="ct blk" blk_line="36">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l36" class='ln'>36</a></td><td>  <a id="36c3" class="tk">real32_T</a> <a id="36c12" class="tk">Buffer_CircBuf</a>[4];          <span class="ct">/* '<a class="ct blk" blk_line="36">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="37" id="37">
-<td><a id="l37" class='ln'>37</a></td><td>  <a id="37c3" class="tk">real32_T</a> <a id="37c12" class="tk">DigitalFilter_FILT_STATES</a>[4];<span class="ct">/* '<a class="ct blk" blk_line="37">&lt;S1&gt;/Digital Filter</a>' */</span></td></tr>
+<td><a id="l37" class='ln'>37</a></td><td>  <a id="37c3" class="tk">real32_T</a> <a id="37c12" class="tk">Buffer1_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="37">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="38" id="38">
-<td><a id="l38" class='ln'>38</a></td><td>  <a id="38c3" class="tk">real32_T</a> <a id="38c12" class="tk">SpeedIntegrator_DSTATE</a>;     <span class="ct">/* '<a class="ct blk" blk_line="38">&lt;Root&gt;/SpeedIntegrator</a>' */</span></td></tr>
+<td><a id="l38" class='ln'>38</a></td><td>  <a id="38c3" class="tk">real32_T</a> <a id="38c12" class="tk">Buffer2_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="38">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="39" id="39">
-<td><a id="l39" class='ln'>39</a></td><td>  <a id="39c3" class="tk">int32_T</a> <a id="39c11" class="tk">Buffer_inBufPtrIdx</a>;          <span class="ct">/* '<a class="ct blk" blk_line="39">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l39" class='ln'>39</a></td><td>  <a id="39c3" class="tk">real32_T</a> <a id="39c12" class="tk">DigitalFilter_FILT_STATES</a>[4];<span class="ct">/* '<a class="ct blk" blk_line="39">&lt;S1&gt;/Digital Filter</a>' */</span></td></tr>
 <tr name="40" id="40">
-<td><a id="l40" class='ln'>40</a></td><td>  <a id="40c3" class="tk">int32_T</a> <a id="40c11" class="tk">Buffer_outBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="40">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l40" class='ln'>40</a></td><td>  <a id="40c3" class="tk">real32_T</a> <a id="40c12" class="tk">SpeedIntegrator_DSTATE</a>;     <span class="ct">/* '<a class="ct blk" blk_line="40">&lt;Root&gt;/SpeedIntegrator</a>' */</span></td></tr>
 <tr name="41" id="41">
-<td><a id="l41" class='ln'>41</a></td><td>  <a id="41c3" class="tk">int32_T</a> <a id="41c11" class="tk">Buffer_bufferLength</a>;         <span class="ct">/* '<a class="ct blk" blk_line="41">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l41" class='ln'>41</a></td><td>  <a id="41c3" class="tk">int32_T</a> <a id="41c11" class="tk">Buffer_inBufPtrIdx</a>;          <span class="ct">/* '<a class="ct blk" blk_line="41">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="42" id="42">
-<td><a id="l42" class='ln'>42</a></td><td>  <a id="42c3" class="tk">uint8_T</a> <a id="42c11" class="tk">Counter_Count</a>;               <span class="ct">/* '<a class="ct blk" blk_line="42">&lt;Root&gt;/Counter</a>' */</span></td></tr>
+<td><a id="l42" class='ln'>42</a></td><td>  <a id="42c3" class="tk">int32_T</a> <a id="42c11" class="tk">Buffer_outBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="42">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="43" id="43">
-<td><a id="l43" class='ln'>43</a></td><td>  <a id="43c3" class="tk">boolean_T</a> <a id="43c13" class="tk">Memory_PreviousInput</a>;      <span class="ct">/* '<a class="ct blk" blk_line="43">&lt;S2&gt;/Memory</a>' */</span></td></tr>
+<td><a id="l43" class='ln'>43</a></td><td>  <a id="43c3" class="tk">int32_T</a> <a id="43c11" class="tk">Buffer_bufferLength</a>;         <span class="ct">/* '<a class="ct blk" blk_line="43">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="44" id="44">
-<td><a id="l44" class='ln'>44</a></td><td>  <a id="44c3" class="tk">boolean_T</a> <a id="44c13" class="tk">Memory_PreviousInput_c</a>;    <span class="ct">/* '<a class="ct blk" blk_line="44">&lt;S3&gt;/Memory</a>' */</span></td></tr>
+<td><a id="l44" class='ln'>44</a></td><td>  <a id="44c3" class="tk">int32_T</a> <a id="44c11" class="tk">Buffer1_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="44">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="45" id="45">
-<td><a id="l45" class='ln'>45</a></td><td><span class="br">}</span> <a id="45c3" class="tk">DW</a>;</td></tr>
+<td><a id="l45" class='ln'>45</a></td><td>  <a id="45c3" class="tk">int32_T</a> <a id="45c11" class="tk">Buffer1_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="45">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="46" id="46">
-<td><a id="l46" class='ln'>46</a></td><td></td></tr>
+<td><a id="l46" class='ln'>46</a></td><td>  <a id="46c3" class="tk">int32_T</a> <a id="46c11" class="tk">Buffer1_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="46">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="47" id="47">
-<td><a id="l47" class='ln'>47</a></td><td><span class="ct">/* Constant parameters (default storage) */</span></td></tr>
+<td><a id="l47" class='ln'>47</a></td><td>  <a id="47c3" class="tk">int32_T</a> <a id="47c11" class="tk">Buffer2_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="47">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="48" id="48">
-<td><a id="l48" class='ln'>48</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td><a id="l48" class='ln'>48</a></td><td>  <a id="48c3" class="tk">int32_T</a> <a id="48c11" class="tk">Buffer2_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="48">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="49" id="49">
-<td><a id="l49" class='ln'>49</a></td><td>  <span class="ct">/* Pooled Parameter (Expression: [0 1;1 0;0 1;0 1;1 0;1 0;0 0;0 0])</span></td></tr>
+<td><a id="l49" class='ln'>49</a></td><td>  <a id="49c3" class="tk">int32_T</a> <a id="49c11" class="tk">Buffer2_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="49">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="50" id="50">
-<td><a id="l50" class='ln'>50</a></td><td><span class="ct">   * Referenced by:</span></td></tr>
+<td><a id="l50" class='ln'>50</a></td><td>  <a id="50c3" class="tk">uint8_T</a> <a id="50c11" class="tk">Counter_Count</a>;               <span class="ct">/* '<a class="ct blk" blk_line="50">&lt;Root&gt;/Counter</a>' */</span></td></tr>
 <tr name="51" id="51">
-<td><a id="l51" class='ln'>51</a></td><td><span class="ct">   *   '<a class="ct blk" blk_line="51">&lt;S2&gt;/Logic</a>'</span></td></tr>
+<td><a id="l51" class='ln'>51</a></td><td>  <a id="51c3" class="tk">boolean_T</a> <a id="51c13" class="tk">Memory_PreviousInput</a>;      <span class="ct">/* '<a class="ct blk" blk_line="51">&lt;S2&gt;/Memory</a>' */</span></td></tr>
 <tr name="52" id="52">
-<td><a id="l52" class='ln'>52</a></td><td><span class="ct">   *   '<a class="ct blk" blk_line="52">&lt;S3&gt;/Logic</a>'</span></td></tr>
+<td><a id="l52" class='ln'>52</a></td><td>  <a id="52c3" class="tk">boolean_T</a> <a id="52c13" class="tk">Memory_PreviousInput_c</a>;    <span class="ct">/* '<a class="ct blk" blk_line="52">&lt;S3&gt;/Memory</a>' */</span></td></tr>
 <tr name="53" id="53">
-<td><a id="l53" class='ln'>53</a></td><td><span class="ct">   */</span></td></tr>
+<td><a id="l53" class='ln'>53</a></td><td><span class="br">}</span> <a id="53c3" class="tk">DW</a>;</td></tr>
 <tr name="54" id="54">
-<td><a id="l54" class='ln'>54</a></td><td>  <a id="54c3" class="tk">boolean_T</a> <a id="54c13" class="tk">pooled3</a>[16];</td></tr>
+<td><a id="l54" class='ln'>54</a></td><td></td></tr>
 <tr name="55" id="55">
-<td><a id="l55" class='ln'>55</a></td><td><span class="br">}</span> <a id="55c3" class="tk">ConstP</a>;</td></tr>
+<td><a id="l55" class='ln'>55</a></td><td><span class="ct">/* Constant parameters (default storage) */</span></td></tr>
 <tr name="56" id="56">
-<td><a id="l56" class='ln'>56</a></td><td></td></tr>
+<td><a id="l56" class='ln'>56</a></td><td><span class="kw">typedef</span> <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="57" id="57">
-<td><a id="l57" class='ln'>57</a></td><td><span class="ct">/* Real-time Model Data Structure */</span></td></tr>
+<td><a id="l57" class='ln'>57</a></td><td>  <span class="ct">/* Pooled Parameter (Expression: [0 1;1 0;0 1;0 1;1 0;1 0;0 0;0 0])</span></td></tr>
 <tr name="58" id="58">
-<td><a id="l58" class='ln'>58</a></td><td><span class="kw">struct</span> <a id="58c8" class="tk">tag_RTM</a> <span class="br">{</span></td></tr>
+<td><a id="l58" class='ln'>58</a></td><td><span class="ct">   * Referenced by:</span></td></tr>
 <tr name="59" id="59">
-<td><a id="l59" class='ln'>59</a></td><td>  <a id="59c3" class="tk">DW</a> <a id="59c6" class="tk">*</a><a id="59c7" class="tk">dwork</a>;</td></tr>
+<td><a id="l59" class='ln'>59</a></td><td><span class="ct">   *   '<a class="ct blk" blk_line="59">&lt;S2&gt;/Logic</a>'</span></td></tr>
 <tr name="60" id="60">
-<td><a id="l60" class='ln'>60</a></td><td></td></tr>
+<td><a id="l60" class='ln'>60</a></td><td><span class="ct">   *   '<a class="ct blk" blk_line="60">&lt;S3&gt;/Logic</a>'</span></td></tr>
 <tr name="61" id="61">
-<td><a id="l61" class='ln'>61</a></td><td>  <span class="ct">/*</span></td></tr>
+<td><a id="l61" class='ln'>61</a></td><td><span class="ct">   */</span></td></tr>
 <tr name="62" id="62">
-<td><a id="l62" class='ln'>62</a></td><td><span class="ct">   * Timing:</span></td></tr>
+<td><a id="l62" class='ln'>62</a></td><td>  <a id="62c3" class="tk">boolean_T</a> <a id="62c13" class="tk">pooled3</a>[16];</td></tr>
 <tr name="63" id="63">
-<td><a id="l63" class='ln'>63</a></td><td><span class="ct">   * The following substructure contains information regarding</span></td></tr>
+<td><a id="l63" class='ln'>63</a></td><td><span class="br">}</span> <a id="63c3" class="tk">ConstP</a>;</td></tr>
 <tr name="64" id="64">
-<td><a id="l64" class='ln'>64</a></td><td><span class="ct">   * the timing information for the model.</span></td></tr>
+<td><a id="l64" class='ln'>64</a></td><td></td></tr>
 <tr name="65" id="65">
-<td><a id="l65" class='ln'>65</a></td><td><span class="ct">   */</span></td></tr>
+<td><a id="l65" class='ln'>65</a></td><td><span class="ct">/* Real-time Model Data Structure */</span></td></tr>
 <tr name="66" id="66">
-<td><a id="l66" class='ln'>66</a></td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td><a id="l66" class='ln'>66</a></td><td><span class="kw">struct</span> <a id="66c8" class="tk">tag_RTM</a> <span class="br">{</span></td></tr>
 <tr name="67" id="67">
-<td><a id="l67" class='ln'>67</a></td><td>    <span class="kw">struct</span> <span class="br">{</span></td></tr>
+<td><a id="l67" class='ln'>67</a></td><td>  <a id="67c3" class="tk">DW</a> <a id="67c6" class="tk">*</a><a id="67c7" class="tk">dwork</a>;</td></tr>
 <tr name="68" id="68">
-<td><a id="l68" class='ln'>68</a></td><td>      <a id="68c7" class="tk">uint8_T</a> <a id="68c15" class="tk">TID</a>[2];</td></tr>
+<td><a id="l68" class='ln'>68</a></td><td></td></tr>
 <tr name="69" id="69">
-<td><a id="l69" class='ln'>69</a></td><td>    <span class="br">}</span> <a id="69c7" class="tk">TaskCounters</a>;</td></tr>
+<td><a id="l69" class='ln'>69</a></td><td>  <span class="ct">/*</span></td></tr>
 <tr name="70" id="70">
-<td><a id="l70" class='ln'>70</a></td><td>  <span class="br">}</span> <a id="70c5" class="tk">Timing</a>;</td></tr>
+<td><a id="l70" class='ln'>70</a></td><td><span class="ct">   * Timing:</span></td></tr>
 <tr name="71" id="71">
-<td><a id="l71" class='ln'>71</a></td><td><span class="br">}</span>;</td></tr>
+<td><a id="l71" class='ln'>71</a></td><td><span class="ct">   * The following substructure contains information regarding</span></td></tr>
 <tr name="72" id="72">
-<td><a id="l72" class='ln'>72</a></td><td></td></tr>
+<td><a id="l72" class='ln'>72</a></td><td><span class="ct">   * the timing information for the model.</span></td></tr>
 <tr name="73" id="73">
-<td><a id="l73" class='ln'>73</a></td><td><span class="ct">/* Constant parameters (default storage) */</span></td></tr>
+<td><a id="l73" class='ln'>73</a></td><td><span class="ct">   */</span></td></tr>
 <tr name="74" id="74">
-<td><a id="l74" class='ln'>74</a></td><td><span class="kw">extern</span> <span class="kw">const</span> <a id="74c14" class="tk">ConstP</a> <a id="74c21" class="tk">rtConstP</a>;</td></tr>
+<td><a id="l74" class='ln'>74</a></td><td>  <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="75" id="75">
-<td><a id="l75" class='ln'>75</a></td><td></td></tr>
+<td><a id="l75" class='ln'>75</a></td><td>    <span class="kw">struct</span> <span class="br">{</span></td></tr>
 <tr name="76" id="76">
-<td><a id="l76" class='ln'>76</a></td><td><span class="ct">/* Model entry point functions */</span></td></tr>
+<td><a id="l76" class='ln'>76</a></td><td>      <a id="76c7" class="tk">uint8_T</a> <a id="76c15" class="tk">TID</a>[4];</td></tr>
 <tr name="77" id="77">
-<td><a id="l77" class='ln'>77</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="77c13" class="tk">SmartTrackerFilter_initialize</a>(<a id="77c43" class="tk">RT_MODEL</a> <a id="77c52" class="tk">*</a><span class="kw">const</span> <a id="77c59" class="tk">rtM</a>);</td></tr>
+<td><a id="l77" class='ln'>77</a></td><td>    <span class="br">}</span> <a id="77c7" class="tk">TaskCounters</a>;</td></tr>
 <tr name="78" id="78">
-<td><a id="l78" class='ln'>78</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="78c13" class="tk">SmartTrackerFilter_step</a>(<a id="78c37" class="tk">RT_MODEL</a> <a id="78c46" class="tk">*</a><span class="kw">const</span> <a id="78c53" class="tk">rtM</a>, <a id="78c58" class="tk">real32_T</a> <a id="78c67" class="tk">rtU_rawAccelIn</a>,</td></tr>
+<td><a id="l78" class='ln'>78</a></td><td>  <span class="br">}</span> <a id="78c5" class="tk">Timing</a>;</td></tr>
 <tr name="79" id="79">
-<td><a id="l79" class='ln'>79</a></td><td>  <a id="79c3" class="tk">boolean_T</a> <a id="79c13" class="tk">rtU_valueRead</a>, <a id="79c28" class="tk">real32_T</a> <a id="79c37" class="tk">*</a><a id="79c38" class="tk">rtY_speedOut</a>, <a id="79c52" class="tk">real32_T</a> <a id="79c61" class="tk">*</a><a id="79c62" class="tk">rtY_gravOut</a>,</td></tr>
+<td><a id="l79" class='ln'>79</a></td><td><span class="br">}</span>;</td></tr>
 <tr name="80" id="80">
-<td><a id="l80" class='ln'>80</a></td><td>  <a id="80c3" class="tk">boolean_T</a> <a id="80c13" class="tk">*</a><a id="80c14" class="tk">rtY_newValOut</a>, <a id="80c29" class="tk">boolean_T</a> <a id="80c39" class="tk">*</a><a id="80c40" class="tk">rtY_overflowOut</a>);</td></tr>
+<td><a id="l80" class='ln'>80</a></td><td></td></tr>
 <tr name="81" id="81">
-<td><a id="l81" class='ln'>81</a></td><td></td></tr>
+<td><a id="l81" class='ln'>81</a></td><td><span class="ct">/* Constant parameters (default storage) */</span></td></tr>
 <tr name="82" id="82">
-<td><a id="l82" class='ln'>82</a></td><td><span class="ct">/*-</span></td></tr>
+<td><a id="l82" class='ln'>82</a></td><td><span class="kw">extern</span> <span class="kw">const</span> <a id="82c14" class="tk">ConstP</a> <a id="82c21" class="tk">rtConstP</a>;</td></tr>
 <tr name="83" id="83">
-<td><a id="l83" class='ln'>83</a></td><td><span class="ct"> * The generated code includes comments that allow you to trace directly</span></td></tr>
+<td><a id="l83" class='ln'>83</a></td><td></td></tr>
 <tr name="84" id="84">
-<td><a id="l84" class='ln'>84</a></td><td><span class="ct"> * back to the appropriate location in the model.  The basic format</span></td></tr>
+<td><a id="l84" class='ln'>84</a></td><td><span class="ct">/* Model entry point functions */</span></td></tr>
 <tr name="85" id="85">
-<td><a id="l85" class='ln'>85</a></td><td><span class="ct"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span></td></tr>
+<td><a id="l85" class='ln'>85</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="85c13" class="tk">SmartTrackerFilter_initialize</a>(<a id="85c43" class="tk">RT_MODEL</a> <a id="85c52" class="tk">*</a><span class="kw">const</span> <a id="85c59" class="tk">rtM</a>);</td></tr>
 <tr name="86" id="86">
-<td><a id="l86" class='ln'>86</a></td><td><span class="ct"> * assigned by Simulink) and block_name is the name of the block.</span></td></tr>
+<td><a id="l86" class='ln'>86</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="86c13" class="tk">SmartTrackerFilter_step</a>(<a id="86c37" class="tk">RT_MODEL</a> <a id="86c46" class="tk">*</a><span class="kw">const</span> <a id="86c53" class="tk">rtM</a>, <a id="86c58" class="tk">real32_T</a> <a id="86c67" class="tk">rtU_rawAccelIn</a>,</td></tr>
 <tr name="87" id="87">
-<td><a id="l87" class='ln'>87</a></td><td><span class="ct"> *</span></td></tr>
+<td><a id="l87" class='ln'>87</a></td><td>  <a id="87c3" class="tk">boolean_T</a> <a id="87c13" class="tk">rtU_valueRead</a>, <a id="87c28" class="tk">real32_T</a> <a id="87c37" class="tk">*</a><a id="87c38" class="tk">rtY_speedOut</a>, <a id="87c52" class="tk">real32_T</a> <a id="87c61" class="tk">*</a><a id="87c62" class="tk">rtY_gravOut</a>,</td></tr>
 <tr name="88" id="88">
-<td><a id="l88" class='ln'>88</a></td><td><span class="ct"> * Use the MATLAB hilite_system command to trace the generated code back</span></td></tr>
+<td><a id="l88" class='ln'>88</a></td><td>  <a id="88c3" class="tk">boolean_T</a> <a id="88c13" class="tk">*</a><a id="88c14" class="tk">rtY_newValOut</a>, <a id="88c29" class="tk">boolean_T</a> <a id="88c39" class="tk">*</a><a id="88c40" class="tk">rtY_overflowOut</a>);</td></tr>
 <tr name="89" id="89">
-<td><a id="l89" class='ln'>89</a></td><td><span class="ct"> * to the model.  For example,</span></td></tr>
+<td><a id="l89" class='ln'>89</a></td><td></td></tr>
 <tr name="90" id="90">
-<td><a id="l90" class='ln'>90</a></td><td><span class="ct"> *</span></td></tr>
+<td><a id="l90" class='ln'>90</a></td><td><span class="ct">/*-</span></td></tr>
 <tr name="91" id="91">
-<td><a id="l91" class='ln'>91</a></td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="91">&lt;S3&gt;</a>')    - opens system 3</span></td></tr>
+<td><a id="l91" class='ln'>91</a></td><td><span class="ct"> * The generated code includes comments that allow you to trace directly</span></td></tr>
 <tr name="92" id="92">
-<td><a id="l92" class='ln'>92</a></td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="92">&lt;S3&gt;/Kp</a>') - opens and selects block Kp which resides in S3</span></td></tr>
+<td><a id="l92" class='ln'>92</a></td><td><span class="ct"> * back to the appropriate location in the model.  The basic format</span></td></tr>
 <tr name="93" id="93">
-<td><a id="l93" class='ln'>93</a></td><td><span class="ct"> *</span></td></tr>
+<td><a id="l93" class='ln'>93</a></td><td><span class="ct"> * is &lt;system&gt;/block_name, where system is the system number (uniquely</span></td></tr>
 <tr name="94" id="94">
-<td><a id="l94" class='ln'>94</a></td><td><span class="ct"> * Here is the system hierarchy for this model</span></td></tr>
+<td><a id="l94" class='ln'>94</a></td><td><span class="ct"> * assigned by Simulink) and block_name is the name of the block.</span></td></tr>
 <tr name="95" id="95">
 <td><a id="l95" class='ln'>95</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="96" id="96">
-<td><a id="l96" class='ln'>96</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="96">&lt;Root&gt;</a>' : 'SmartTrackerFilter'</span></td></tr>
+<td><a id="l96" class='ln'>96</a></td><td><span class="ct"> * Use the MATLAB hilite_system command to trace the generated code back</span></td></tr>
 <tr name="97" id="97">
-<td><a id="l97" class='ln'>97</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="97">&lt;S1&gt;</a>'   : 'SmartTrackerFilter/GravFilter'</span></td></tr>
+<td><a id="l97" class='ln'>97</a></td><td><span class="ct"> * to the model.  For example,</span></td></tr>
 <tr name="98" id="98">
-<td><a id="l98" class='ln'>98</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="98">&lt;S2&gt;</a>'   : 'SmartTrackerFilter/newVal'</span></td></tr>
+<td><a id="l98" class='ln'>98</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="99" id="99">
-<td><a id="l99" class='ln'>99</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="99">&lt;S3&gt;</a>'   : 'SmartTrackerFilter/overflow'</span></td></tr>
+<td><a id="l99" class='ln'>99</a></td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="99">&lt;S3&gt;</a>')    - opens system 3</span></td></tr>
 <tr name="100" id="100">
-<td><a id="l100" class='ln'>100</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="100">&lt;S4&gt;</a>'   : 'SmartTrackerFilter/GravFilter/Check Signal Attributes'</span></td></tr>
+<td><a id="l100" class='ln'>100</a></td><td><span class="ct"> * hilite_system('<a class="ct blk" blk_line="100">&lt;S3&gt;/Kp</a>') - opens and selects block Kp which resides in S3</span></td></tr>
 <tr name="101" id="101">
-<td><a id="l101" class='ln'>101</a></td><td><span class="ct"> */</span></td></tr>
+<td><a id="l101" class='ln'>101</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="102" id="102">
-<td><a id="l102" class='ln'>102</a></td><td><span class="pp">#endif</span>                                 <span class="ct">/* RTW_HEADER_SmartTrackerFilter_h_ */</span></td></tr>
+<td><a id="l102" class='ln'>102</a></td><td><span class="ct"> * Here is the system hierarchy for this model</span></td></tr>
 <tr name="103" id="103">
-<td><a id="l103" class='ln'>103</a></td><td></td></tr>
+<td><a id="l103" class='ln'>103</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="104" id="104">
-<td><a id="l104" class='ln'>104</a></td><td><span class="ct">/*</span></td></tr>
+<td><a id="l104" class='ln'>104</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="104">&lt;Root&gt;</a>' : 'SmartTrackerFilter'</span></td></tr>
 <tr name="105" id="105">
-<td><a id="l105" class='ln'>105</a></td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<td><a id="l105" class='ln'>105</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="105">&lt;S1&gt;</a>'   : 'SmartTrackerFilter/GravFilter'</span></td></tr>
 <tr name="106" id="106">
-<td><a id="l106" class='ln'>106</a></td><td><span class="ct"> *</span></td></tr>
+<td><a id="l106" class='ln'>106</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="106">&lt;S2&gt;</a>'   : 'SmartTrackerFilter/newVal'</span></td></tr>
 <tr name="107" id="107">
-<td><a id="l107" class='ln'>107</a></td><td><span class="ct"> * [EOF]</span></td></tr>
+<td><a id="l107" class='ln'>107</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="107">&lt;S3&gt;</a>'   : 'SmartTrackerFilter/overflow'</span></td></tr>
 <tr name="108" id="108">
-<td><a id="l108" class='ln'>108</a></td><td><span class="ct"> */</span></td></tr>
+<td><a id="l108" class='ln'>108</a></td><td><span class="ct"> * '<a class="ct blk" blk_line="108">&lt;S4&gt;</a>'   : 'SmartTrackerFilter/GravFilter/Check Signal Attributes'</span></td></tr>
 <tr name="109" id="109">
-<td><a id="l109" class='ln'>109</a></td><td></td></tr>
+<td><a id="l109" class='ln'>109</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="110" id="110">
+<td><a id="l110" class='ln'>110</a></td><td><span class="pp">#endif</span>                                 <span class="ct">/* RTW_HEADER_SmartTrackerFilter_h_ */</span></td></tr>
+<tr name="111" id="111">
+<td><a id="l111" class='ln'>111</a></td><td></td></tr>
+<tr name="112" id="112">
+<td><a id="l112" class='ln'>112</a></td><td><span class="ct">/*</span></td></tr>
+<tr name="113" id="113">
+<td><a id="l113" class='ln'>113</a></td><td><span class="ct"> * File trailer for generated code.</span></td></tr>
+<tr name="114" id="114">
+<td><a id="l114" class='ln'>114</a></td><td><span class="ct"> *</span></td></tr>
+<tr name="115" id="115">
+<td><a id="l115" class='ln'>115</a></td><td><span class="ct"> * [EOF]</span></td></tr>
+<tr name="116" id="116">
+<td><a id="l116" class='ln'>116</a></td><td><span class="ct"> */</span></td></tr>
+<tr name="117" id="117">
+<td><a id="l117" class='ln'>117</a></td><td></td></tr>
 </table>
 </pre>
 </body>
