@@ -52,7 +52,7 @@ Entry-Point Functions
 
 </h3>
 <p>
-Function: <a href="SmartTrackerFilter_c.html#fcn_SmartTrackerFilter_initialize">SmartTrackerFilter_initialize</a>
+Function: <a href="SmartTrackerFilter_cpp.html#fcn_initialize">initialize</a>
 </p>
 <table width="100%" class="AltRow" cellspacing="0">
 <tr class="even">
@@ -61,7 +61,7 @@ Prototype
 </td>
 <td width="75%" align="left" valign="top">
 <b>
-void SmartTrackerFilter_initialize(RT_MODEL&nbsp;*const&nbsp;rtM)
+void initialize(void)
 </b>
 
 </td>
@@ -90,52 +90,7 @@ Must be called exactly once
 Arguments
 </td>
 <td width="75%" align="left" valign="top">
-<table class="AltRow FirstColumn" cellspacing="0">
-<tr class="heading">
-<th align="left" valign="top">
-<b>
-#
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Name
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Data Type
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Description
-</b>
-
-</th>
-
-</tr>
-<tr class="even">
-<td align="right" valign="top">
-1
-</td>
-<td align="left" valign="top">
-rtM
-</td>
-<td align="left" valign="top">
-RT_MODEL&nbsp;*const
-</td>
-<td align="left" valign="top">
-RTModel
-</td>
-
-</tr>
-
-</table>
-
+None
 </td>
 
 </tr>
@@ -160,7 +115,7 @@ Header file
 
 </table>
 <p>
-Function: <a href="SmartTrackerFilter_c.html#fcn_SmartTrackerFilter_step">SmartTrackerFilter_step</a>
+Function: <a href="SmartTrackerFilter_cpp.html#fcn_step">step</a>
 </p>
 <table width="100%" class="AltRow" cellspacing="0">
 <tr class="even">
@@ -169,7 +124,7 @@ Prototype
 </td>
 <td width="75%" align="left" valign="top">
 <b>
-void SmartTrackerFilter_step(RT_MODEL&nbsp;*const&nbsp;rtM, int16_T rtU_rawAccelIn, boolean_T rtU_valueRead, real32_T&nbsp;*rtY_speedOut, real32_T&nbsp;*rtY_gravOut, boolean_T&nbsp;*rtY_newValOut, boolean_T&nbsp;*rtY_overflowOut)
+void step(void)
 </b>
 
 </td>
@@ -198,173 +153,7 @@ Must be called periodically, every 0.005 seconds
 Arguments
 </td>
 <td width="75%" align="left" valign="top">
-<span title="Click to shrink or expand table" onclick="rtwTableShrink(this)">[-]</span><table class="AltRow FirstColumn" cellspacing="0">
-<tr class="heading">
-<th align="left" valign="top">
-<b>
-#
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Name
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Data Type
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Scaling
-</b>
-
-</th>
-<th align="left" valign="top">
-<b>
-Description
-</b>
-
-</th>
-
-</tr>
-<tr class="even">
-<td align="right" valign="top">
-1
-</td>
-<td align="left" valign="top">
-rtM
-</td>
-<td align="left" valign="top">
-RT_MODEL&nbsp;*const
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-RTModel
-</td>
-
-</tr>
-<tr class="odd">
-<td align="right" valign="top">
-2
-</td>
-<td align="left" valign="top">
-rtU_rawAccelIn
-</td>
-<td align="left" valign="top">
-int16_T
-</td>
-<td align="left" valign="top">
-<span title="  DataTypeMode: Fixed-point: binary point scaling
-    Signedness: Signed
-    WordLength: 16
-FractionLength: 14
-">sfix16_En14</span>
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:103')" name="code2model" class="code2model">&lt;Root&gt;/rawAccelIn</a>
-</td>
-
-</tr>
-<tr class="even">
-<td align="right" valign="top">
-3
-</td>
-<td align="left" valign="top">
-rtU_valueRead
-</td>
-<td align="left" valign="top">
-boolean_T
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:157')" name="code2model" class="code2model">&lt;Root&gt;/valueRead</a>
-</td>
-
-</tr>
-<tr class="odd">
-<td align="right" valign="top">
-4
-</td>
-<td align="left" valign="top">
-rtY_speedOut
-</td>
-<td align="left" valign="top">
-real32_T&nbsp;*
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:121')" name="code2model" class="code2model">&lt;Root&gt;/speedOut</a>
-</td>
-
-</tr>
-<tr class="even">
-<td align="right" valign="top">
-5
-</td>
-<td align="left" valign="top">
-rtY_gravOut
-</td>
-<td align="left" valign="top">
-real32_T&nbsp;*
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:147')" name="code2model" class="code2model">&lt;Root&gt;/gravOut</a>
-</td>
-
-</tr>
-<tr class="odd">
-<td align="right" valign="top">
-6
-</td>
-<td align="left" valign="top">
-rtY_newValOut
-</td>
-<td align="left" valign="top">
-boolean_T&nbsp;*
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:166')" name="code2model" class="code2model">&lt;Root&gt;/newValOut</a>
-</td>
-
-</tr>
-<tr class="even">
-<td align="right" valign="top">
-7
-</td>
-<td align="left" valign="top">
-rtY_overflowOut
-</td>
-<td align="left" valign="top">
-boolean_T&nbsp;*
-</td>
-<td align="left" valign="top">
-&#160;
-</td>
-<td align="left" valign="top">
-<a href="matlab:coder.internal.code2model('SmartTrackerFilter:168')" name="code2model" class="code2model">&lt;Root&gt;/overflowOut</a>
-</td>
-
-</tr>
-
-</table>
-
+None
 </td>
 
 </tr>

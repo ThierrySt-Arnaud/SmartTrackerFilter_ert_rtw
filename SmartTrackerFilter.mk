@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'SmartTrackerFilter'. 
 ## 
 ## Makefile     : SmartTrackerFilter.mk
-## Generated on : Mon Jan 10 21:57:00 2022
+## Generated on : Tue Jan 11 10:05:45 2022
 ## MATLAB Coder version: 4.0 (R2018a)
 ## 
 ## Build Info:
@@ -34,7 +34,7 @@ ARCH                      = maci64
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
-TGT_FCN_LIB               = ISO_C
+TGT_FCN_LIB               = ISO_C++
 MODEL_HAS_DYNAMICALLY_LOADED_SFCNS = 0
 MODELREF_LINK_RSPFILE_NAME = SmartTrackerFilter_ref.rsp
 RELATIVE_PATH_TO_ANCHOR   = ..
@@ -209,9 +209,9 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_IMPLIED) $(DEFINES_STANDARD)
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter.c $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter_data.c
+SRCS = $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter.cpp $(START_DIR)/SmartTrackerFilter_ert_rtw/SmartTrackerFilter_data.cpp
 
-MAIN_SRC = $(START_DIR)/SmartTrackerFilter_ert_rtw/ert_main.c
+MAIN_SRC = $(START_DIR)/SmartTrackerFilter_ert_rtw/ert_main.cpp
 
 ALL_SRCS = $(SRCS) $(MAIN_SRC)
 
@@ -307,7 +307,7 @@ execute : download
 
 $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 	@echo "### Creating standalone executable "$(PRODUCT)" ..."
-	$(LD) $(LDFLAGS) -o $(PRODUCT) $(OBJS) $(MAIN_OBJ) $(SYSTEM_LIBS) $(TOOLCHAIN_LIBS)
+	$(CPP_LD) $(CPP_LDFLAGS) -o $(PRODUCT) $(OBJS) $(MAIN_OBJ) $(SYSTEM_LIBS) $(TOOLCHAIN_LIBS)
 	@echo "### Created: $(PRODUCT)"
 
 
