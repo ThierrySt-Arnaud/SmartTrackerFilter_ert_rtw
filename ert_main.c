@@ -5,20 +5,44 @@
  *
  * Model version                  : 1.9
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Mon Jan 10 18:58:29 2022
+ * C/C++ source code generated on : Mon Jan 10 19:20:52 2022
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Custom Processor->Custom
  * Emulation hardware selection:
  *    Differs from embedded hardware (Custom Processor->MATLAB Host Computer)
- * Code generation objectives: Unspecified
- * Validation result: Not run
+ * Code generation objectives:
+ *    1. Execution efficiency
+ *    2. RAM efficiency
+ * Validation result: Passed (11), Warnings (2), Error (0)
  */
 
 #include <stddef.h>
 #include <stdio.h>                     /* This ert_main.c example uses printf/fflush */
 #include "SmartTrackerFilter.h"        /* Model's header file */
 #include "rtwtypes.h"
+
+static RT_MODEL rtM_;
+static RT_MODEL *const rtMPtr = &rtM_; /* Real-time model */
+static DW rtDW;                        /* Observable states */
+
+/* '<Root>/rawAccelIn' */
+static real32_T rtU_rawAccelIn;
+
+/* '<Root>/valueRead' */
+static boolean_T rtU_valueRead;
+
+/* '<Root>/speedOut' */
+static real32_T rtY_speedOut;
+
+/* '<Root>/gravOut' */
+static real32_T rtY_gravOut;
+
+/* '<Root>/newValOut' */
+static boolean_T rtY_newValOut;
+
+/* '<Root>/overflowOut' */
+static boolean_T rtY_overflowOut;
 
 /*
  * Associating rt_OneStep with a real-time clock or interrupt service routine
@@ -31,8 +55,8 @@
  * your application needs.  This example simply sets an error status in the
  * real-time model and returns from rt_OneStep.
  */
-void rt_OneStep(void);
-void rt_OneStep(void)
+void rt_OneStep(RT_MODEL *const rtM);
+void rt_OneStep(RT_MODEL *const rtM)
 {
   static boolean_T OverrunFlag = false;
 
@@ -40,7 +64,6 @@ void rt_OneStep(void)
 
   /* Check for overrun */
   if (OverrunFlag) {
-    rtmSetErrorStatus(rtM, "Overrun");
     return;
   }
 
@@ -51,7 +74,8 @@ void rt_OneStep(void)
   /* Set model inputs here */
 
   /* Step the model for base rate */
-  SmartTrackerFilter_step();
+  SmartTrackerFilter_step(rtM, rtU_rawAccelIn, rtU_valueRead, &rtY_speedOut,
+    &rtY_gravOut, &rtY_newValOut, &rtY_overflowOut);
 
   /* Get model outputs here */
 
@@ -71,28 +95,40 @@ void rt_OneStep(void)
  */
 int_T main(int_T argc, const char *argv[])
 {
+  RT_MODEL *const rtM = rtMPtr;
+
   /* Unused arguments */
   (void)(argc);
   (void)(argv);
 
+  /* Pack model data into RTM */
+  rtM->dwork = &rtDW;
+
   /* Initialize model */
-  SmartTrackerFilter_initialize();
+  SmartTrackerFilter_initialize(rtM);
 
   /* Attach rt_OneStep to a timer or interrupt service routine with
    * period 0.005 seconds (the model's base sample time) here.  The
    * call syntax for rt_OneStep is
    *
-   *  rt_OneStep();
+   *  rt_OneStep(rtM);
    */
   printf("Warning: The simulation will run forever. "
          "Generated ERT main won't simulate model step behavior. "
          "To change this behavior select the 'MAT-file logging' option.\n");
   fflush((NULL));
-  while (rtmGetErrorStatus(rtM) == (NULL)) {
+  while (1) {
     /*  Perform other application tasks here */
   }
 
+  /* The option 'Remove error status field in real-time model data structure'
+   * is selected, therefore the following code does not need to execute.
+   */
+#if 0
+
   /* Disable rt_OneStep() here */
+#endif
+
   return 0;
 }
 

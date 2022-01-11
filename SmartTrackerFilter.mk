@@ -2,7 +2,7 @@
 ## Makefile generated for Simulink model 'SmartTrackerFilter'. 
 ## 
 ## Makefile     : SmartTrackerFilter.mk
-## Generated on : Mon Jan 10 18:58:35 2022
+## Generated on : Mon Jan 10 19:15:01 2022
 ## MATLAB Coder version: 4.0 (R2018a)
 ## 
 ## Build Info:
@@ -199,7 +199,7 @@ INCLUDES = $(INCLUDES_BUILDINFO)
 ## DEFINES
 ###########################################################################
 
-DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=0 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=0 -DINTEGER_CODE=0 -DMT=0
+DEFINES_BUILD_ARGS = -DCLASSIC_INTERFACE=0 -DALLOCATIONFCN=0 -DTERMFCN=0 -DONESTEPFCN=1 -DMAT_FILE=0 -DMULTI_INSTANCE_CODE=1 -DINTEGER_CODE=0 -DMT=0
 DEFINES_IMPLIED = -DTID01EQ=0
 DEFINES_STANDARD = -DMODEL=SmartTrackerFilter -DNUMST=2 -DNCSTATES=0 -DHAVESTDIO -DMODEL_HAS_DYNAMICALLY_LOADED_SFCNS=0 -DUNIX
 

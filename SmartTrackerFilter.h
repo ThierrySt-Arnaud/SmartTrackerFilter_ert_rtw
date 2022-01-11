@@ -5,14 +5,16 @@
  *
  * Model version                  : 1.9
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Mon Jan 10 18:58:29 2022
+ * C/C++ source code generated on : Mon Jan 10 19:20:52 2022
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Custom Processor->Custom
  * Emulation hardware selection:
  *    Differs from embedded hardware (Custom Processor->MATLAB Host Computer)
- * Code generation objectives: Unspecified
- * Validation result: Not run
+ * Code generation objectives:
+ *    1. Execution efficiency
+ *    2. RAM efficiency
+ * Validation result: Passed (11), Warnings (2), Error (0)
  */
 
 #ifndef RTW_HEADER_SmartTrackerFilter_h_
@@ -25,13 +27,6 @@
 #include "SmartTrackerFilter_types.h"
 
 /* Macros for accessing real-time model data structure */
-#ifndef rtmGetErrorStatus
-# define rtmGetErrorStatus(rtm)        ((rtm)->errorStatus)
-#endif
-
-#ifndef rtmSetErrorStatus
-# define rtmSetErrorStatus(rtm, val)   ((rtm)->errorStatus = (val))
-#endif
 
 /* Block signals and states (default storage) for system '<Root>' */
 typedef struct {
@@ -59,23 +54,9 @@ typedef struct {
   boolean_T pooled3[16];
 } ConstP;
 
-/* External inputs (root inport signals with default storage) */
-typedef struct {
-  real32_T rawAccelIn;                 /* '<Root>/rawAccelIn' */
-  boolean_T valueRead;                 /* '<Root>/valueRead' */
-} ExtU;
-
-/* External outputs (root outports fed by signals with default storage) */
-typedef struct {
-  real32_T speedOut;                   /* '<Root>/speedOut' */
-  real32_T gravOut;                    /* '<Root>/gravOut' */
-  boolean_T newValOut;                 /* '<Root>/newValOut' */
-  boolean_T overflowOut;               /* '<Root>/overflowOut' */
-} ExtY;
-
 /* Real-time Model Data Structure */
 struct tag_RTM {
-  const char_T * volatile errorStatus;
+  DW *dwork;
 
   /*
    * Timing:
@@ -89,24 +70,14 @@ struct tag_RTM {
   } Timing;
 };
 
-/* Block signals and states (default storage) */
-extern DW rtDW;
-
-/* External inputs (root inport signals with default storage) */
-extern ExtU rtU;
-
-/* External outputs (root outports fed by signals with default storage) */
-extern ExtY rtY;
-
 /* Constant parameters (default storage) */
 extern const ConstP rtConstP;
 
 /* Model entry point functions */
-extern void SmartTrackerFilter_initialize(void);
-extern void SmartTrackerFilter_step(void);
-
-/* Real-time Model object */
-extern RT_MODEL *const rtM;
+extern void SmartTrackerFilter_initialize(RT_MODEL *const rtM);
+extern void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
+  boolean_T rtU_valueRead, real32_T *rtY_speedOut, real32_T *rtY_gravOut,
+  boolean_T *rtY_newValOut, boolean_T *rtY_overflowOut);
 
 /*-
  * The generated code includes comments that allow you to trace directly
