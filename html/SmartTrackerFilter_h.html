@@ -25,7 +25,7 @@
 <tr name="7" id="7">
 <td><a id="l7" class='ln'>7</a></td><td><span class="ct"> * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018</span></td></tr>
 <tr name="8" id="8">
-<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * C/C++ source code generated on : Mon Jan 10 21:56:51 2022</span></td></tr>
+<td><a id="l8" class='ln'>8</a></td><td><span class="ct"> * C/C++ source code generated on : Mon Jan 10 22:52:34 2022</span></td></tr>
 <tr name="9" id="9">
 <td><a id="l9" class='ln'>9</a></td><td><span class="ct"> *</span></td></tr>
 <tr name="10" id="10">
@@ -81,33 +81,33 @@
 <tr name="35" id="35">
 <td><a id="l35" class='ln'>35</a></td><td>  <a id="35c3" class="tk">dsp_simulink_IIRHalfbandDeci_bg</a> <a id="35c35" class="tk">obj_m</a>;<span class="ct">/* '<a class="ct blk" blk_line="35">&lt;Root&gt;/Decimator100</a>' */</span></td></tr>
 <tr name="36" id="36">
-<td><a id="l36" class='ln'>36</a></td><td>  <a id="36c3" class="tk">real32_T</a> <a id="36c12" class="tk">Buffer_CircBuf</a>[4];          <span class="ct">/* '<a class="ct blk" blk_line="36">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l36" class='ln'>36</a></td><td>  <a id="36c3" class="tk">real32_T</a> <a id="36c12" class="tk">Buffer1_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="36">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="37" id="37">
-<td><a id="l37" class='ln'>37</a></td><td>  <a id="37c3" class="tk">real32_T</a> <a id="37c12" class="tk">Buffer1_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="37">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
+<td><a id="l37" class='ln'>37</a></td><td>  <a id="37c3" class="tk">real32_T</a> <a id="37c12" class="tk">Buffer2_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="37">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="38" id="38">
-<td><a id="l38" class='ln'>38</a></td><td>  <a id="38c3" class="tk">real32_T</a> <a id="38c12" class="tk">Buffer2_CircBuf</a>[4];         <span class="ct">/* '<a class="ct blk" blk_line="38">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
+<td><a id="l38" class='ln'>38</a></td><td>  <a id="38c3" class="tk">real32_T</a> <a id="38c12" class="tk">DigitalFilter_FILT_STATES</a>[4];<span class="ct">/* '<a class="ct blk" blk_line="38">&lt;S1&gt;/Digital Filter</a>' */</span></td></tr>
 <tr name="39" id="39">
-<td><a id="l39" class='ln'>39</a></td><td>  <a id="39c3" class="tk">real32_T</a> <a id="39c12" class="tk">DigitalFilter_FILT_STATES</a>[4];<span class="ct">/* '<a class="ct blk" blk_line="39">&lt;S1&gt;/Digital Filter</a>' */</span></td></tr>
+<td><a id="l39" class='ln'>39</a></td><td>  <a id="39c3" class="tk">real32_T</a> <a id="39c12" class="tk">SpeedIntegrator_DSTATE</a>;     <span class="ct">/* '<a class="ct blk" blk_line="39">&lt;Root&gt;/SpeedIntegrator</a>' */</span></td></tr>
 <tr name="40" id="40">
-<td><a id="l40" class='ln'>40</a></td><td>  <a id="40c3" class="tk">real32_T</a> <a id="40c12" class="tk">SpeedIntegrator_DSTATE</a>;     <span class="ct">/* '<a class="ct blk" blk_line="40">&lt;Root&gt;/SpeedIntegrator</a>' */</span></td></tr>
+<td><a id="l40" class='ln'>40</a></td><td>  <a id="40c3" class="tk">int32_T</a> <a id="40c11" class="tk">Buffer_inBufPtrIdx</a>;          <span class="ct">/* '<a class="ct blk" blk_line="40">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="41" id="41">
-<td><a id="l41" class='ln'>41</a></td><td>  <a id="41c3" class="tk">int32_T</a> <a id="41c11" class="tk">Buffer_inBufPtrIdx</a>;          <span class="ct">/* '<a class="ct blk" blk_line="41">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l41" class='ln'>41</a></td><td>  <a id="41c3" class="tk">int32_T</a> <a id="41c11" class="tk">Buffer_outBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="41">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="42" id="42">
-<td><a id="l42" class='ln'>42</a></td><td>  <a id="42c3" class="tk">int32_T</a> <a id="42c11" class="tk">Buffer_outBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="42">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l42" class='ln'>42</a></td><td>  <a id="42c3" class="tk">int32_T</a> <a id="42c11" class="tk">Buffer_bufferLength</a>;         <span class="ct">/* '<a class="ct blk" blk_line="42">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="43" id="43">
-<td><a id="l43" class='ln'>43</a></td><td>  <a id="43c3" class="tk">int32_T</a> <a id="43c11" class="tk">Buffer_bufferLength</a>;         <span class="ct">/* '<a class="ct blk" blk_line="43">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
+<td><a id="l43" class='ln'>43</a></td><td>  <a id="43c3" class="tk">int32_T</a> <a id="43c11" class="tk">Buffer1_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="43">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="44" id="44">
-<td><a id="l44" class='ln'>44</a></td><td>  <a id="44c3" class="tk">int32_T</a> <a id="44c11" class="tk">Buffer1_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="44">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
+<td><a id="l44" class='ln'>44</a></td><td>  <a id="44c3" class="tk">int32_T</a> <a id="44c11" class="tk">Buffer1_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="44">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="45" id="45">
-<td><a id="l45" class='ln'>45</a></td><td>  <a id="45c3" class="tk">int32_T</a> <a id="45c11" class="tk">Buffer1_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="45">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
+<td><a id="l45" class='ln'>45</a></td><td>  <a id="45c3" class="tk">int32_T</a> <a id="45c11" class="tk">Buffer1_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="45">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
 <tr name="46" id="46">
-<td><a id="l46" class='ln'>46</a></td><td>  <a id="46c3" class="tk">int32_T</a> <a id="46c11" class="tk">Buffer1_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="46">&lt;Root&gt;/Buffer1</a>' */</span></td></tr>
+<td><a id="l46" class='ln'>46</a></td><td>  <a id="46c3" class="tk">int32_T</a> <a id="46c11" class="tk">Buffer2_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="46">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="47" id="47">
-<td><a id="l47" class='ln'>47</a></td><td>  <a id="47c3" class="tk">int32_T</a> <a id="47c11" class="tk">Buffer2_inBufPtrIdx</a>;         <span class="ct">/* '<a class="ct blk" blk_line="47">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
+<td><a id="l47" class='ln'>47</a></td><td>  <a id="47c3" class="tk">int32_T</a> <a id="47c11" class="tk">Buffer2_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="47">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="48" id="48">
-<td><a id="l48" class='ln'>48</a></td><td>  <a id="48c3" class="tk">int32_T</a> <a id="48c11" class="tk">Buffer2_outBufPtrIdx</a>;        <span class="ct">/* '<a class="ct blk" blk_line="48">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
+<td><a id="l48" class='ln'>48</a></td><td>  <a id="48c3" class="tk">int32_T</a> <a id="48c11" class="tk">Buffer2_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="48">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
 <tr name="49" id="49">
-<td><a id="l49" class='ln'>49</a></td><td>  <a id="49c3" class="tk">int32_T</a> <a id="49c11" class="tk">Buffer2_bufferLength</a>;        <span class="ct">/* '<a class="ct blk" blk_line="49">&lt;Root&gt;/Buffer2</a>' */</span></td></tr>
+<td><a id="l49" class='ln'>49</a></td><td>  <a id="49c3" class="tk">int16_T</a> <a id="49c11" class="tk">Buffer_CircBuf</a>[4];           <span class="ct">/* '<a class="ct blk" blk_line="49">&lt;Root&gt;/Buffer</a>' */</span></td></tr>
 <tr name="50" id="50">
 <td><a id="l50" class='ln'>50</a></td><td>  <a id="50c3" class="tk">uint8_T</a> <a id="50c11" class="tk">Counter_Count</a>;               <span class="ct">/* '<a class="ct blk" blk_line="50">&lt;Root&gt;/Counter</a>' */</span></td></tr>
 <tr name="51" id="51">
@@ -181,7 +181,7 @@
 <tr name="85" id="85">
 <td><a id="l85" class='ln'>85</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="85c13" class="tk">SmartTrackerFilter_initialize</a>(<a id="85c43" class="tk">RT_MODEL</a> <a id="85c52" class="tk">*</a><span class="kw">const</span> <a id="85c59" class="tk">rtM</a>);</td></tr>
 <tr name="86" id="86">
-<td><a id="l86" class='ln'>86</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="86c13" class="tk">SmartTrackerFilter_step</a>(<a id="86c37" class="tk">RT_MODEL</a> <a id="86c46" class="tk">*</a><span class="kw">const</span> <a id="86c53" class="tk">rtM</a>, <a id="86c58" class="tk">real32_T</a> <a id="86c67" class="tk">rtU_rawAccelIn</a>,</td></tr>
+<td><a id="l86" class='ln'>86</a></td><td><span class="kw">extern</span> <span class="kw">void</span> <a id="86c13" class="tk">SmartTrackerFilter_step</a>(<a id="86c37" class="tk">RT_MODEL</a> <a id="86c46" class="tk">*</a><span class="kw">const</span> <a id="86c53" class="tk">rtM</a>, <a id="86c58" class="tk">int16_T</a> <a id="86c66" class="tk">rtU_rawAccelIn</a>,</td></tr>
 <tr name="87" id="87">
 <td><a id="l87" class='ln'>87</a></td><td>  <a id="87c3" class="tk">boolean_T</a> <a id="87c13" class="tk">rtU_valueRead</a>, <a id="87c28" class="tk">real32_T</a> <a id="87c37" class="tk">*</a><a id="87c38" class="tk">rtY_speedOut</a>, <a id="87c52" class="tk">real32_T</a> <a id="87c61" class="tk">*</a><a id="87c62" class="tk">rtY_gravOut</a>,</td></tr>
 <tr name="88" id="88">

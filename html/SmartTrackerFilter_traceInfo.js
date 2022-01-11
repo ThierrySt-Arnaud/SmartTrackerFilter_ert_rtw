@@ -21,6 +21,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["SmartTrackerFilter:200"] = {rtwname: "<Root>/Buffer1"};
 	this.rtwnameHashMap["<Root>/Buffer2"] = {sid: "SmartTrackerFilter:201"};
 	this.sidHashMap["SmartTrackerFilter:201"] = {rtwname: "<Root>/Buffer2"};
+	this.rtwnameHashMap["<Root>/Cast To Single"] = {sid: "SmartTrackerFilter:203"};
+	this.sidHashMap["SmartTrackerFilter:203"] = {rtwname: "<Root>/Cast To Single"};
 	this.rtwnameHashMap["<Root>/Constant"] = {sid: "SmartTrackerFilter:196"};
 	this.sidHashMap["SmartTrackerFilter:196"] = {rtwname: "<Root>/Constant"};
 	this.rtwnameHashMap["<Root>/Constant1"] = {sid: "SmartTrackerFilter:199"};

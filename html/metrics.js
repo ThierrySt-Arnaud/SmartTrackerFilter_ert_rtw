@@ -48,8 +48,8 @@ function CodeMetrics() {
 	stack: 8,
 	stackTotal: 8};
 	 this.metricsArray.fcn["SmartTrackerFilter_step"] = {file: "/Users/thierry/Documents/MATLAB/smarttracker/SmartTrackerFilter_ert_rtw/SmartTrackerFilter.c",
-	stack: 81,
-	stackTotal: 81};
+	stack: 85,
+	stackTotal: 85};
 	 this.getMetrics = function(token) { 
 		 var data;
 		 data = this.metricsArray.var[token];
@@ -60,6 +60,6 @@ function CodeMetrics() {
 			 data.type = "var";
 		 }
 	 return data; }; 
-	 this.codeMetricsSummary = '<a href="SmartTrackerFilter_metrics.html">Global Memory: 0(bytes) Maximum Stack: 81(bytes)</a>';
+	 this.codeMetricsSummary = '<a href="SmartTrackerFilter_metrics.html">Global Memory: 0(bytes) Maximum Stack: 85(bytes)</a>';
 	}
 CodeMetrics.instance = new CodeMetrics();

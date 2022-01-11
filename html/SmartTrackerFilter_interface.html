@@ -169,7 +169,7 @@ Prototype
 </td>
 <td width="75%" align="left" valign="top">
 <b>
-void SmartTrackerFilter_step(RT_MODEL&nbsp;*const&nbsp;rtM, real32_T rtU_rawAccelIn, boolean_T rtU_valueRead, real32_T&nbsp;*rtY_speedOut, real32_T&nbsp;*rtY_gravOut, boolean_T&nbsp;*rtY_newValOut, boolean_T&nbsp;*rtY_overflowOut)
+void SmartTrackerFilter_step(RT_MODEL&nbsp;*const&nbsp;rtM, int16_T rtU_rawAccelIn, boolean_T rtU_valueRead, real32_T&nbsp;*rtY_speedOut, real32_T&nbsp;*rtY_gravOut, boolean_T&nbsp;*rtY_newValOut, boolean_T&nbsp;*rtY_overflowOut)
 </b>
 
 </td>
@@ -220,6 +220,12 @@ Data Type
 </th>
 <th align="left" valign="top">
 <b>
+Scaling
+</b>
+
+</th>
+<th align="left" valign="top">
+<b>
 Description
 </b>
 
@@ -237,6 +243,9 @@ rtM
 RT_MODEL&nbsp;*const
 </td>
 <td align="left" valign="top">
+&#160;
+</td>
+<td align="left" valign="top">
 RTModel
 </td>
 
@@ -249,7 +258,14 @@ RTModel
 rtU_rawAccelIn
 </td>
 <td align="left" valign="top">
-real32_T
+int16_T
+</td>
+<td align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 16
+FractionLength: 14
+">sfix16_En14</span>
 </td>
 <td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:103')" name="code2model" class="code2model">&lt;Root&gt;/rawAccelIn</a>
@@ -267,6 +283,9 @@ rtU_valueRead
 boolean_T
 </td>
 <td align="left" valign="top">
+&#160;
+</td>
+<td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:157')" name="code2model" class="code2model">&lt;Root&gt;/valueRead</a>
 </td>
 
@@ -280,6 +299,9 @@ rtY_speedOut
 </td>
 <td align="left" valign="top">
 real32_T&nbsp;*
+</td>
+<td align="left" valign="top">
+&#160;
 </td>
 <td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:121')" name="code2model" class="code2model">&lt;Root&gt;/speedOut</a>
@@ -297,6 +319,9 @@ rtY_gravOut
 real32_T&nbsp;*
 </td>
 <td align="left" valign="top">
+&#160;
+</td>
+<td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:147')" name="code2model" class="code2model">&lt;Root&gt;/gravOut</a>
 </td>
 
@@ -312,6 +337,9 @@ rtY_newValOut
 boolean_T&nbsp;*
 </td>
 <td align="left" valign="top">
+&#160;
+</td>
+<td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:166')" name="code2model" class="code2model">&lt;Root&gt;/newValOut</a>
 </td>
 
@@ -325,6 +353,9 @@ rtY_overflowOut
 </td>
 <td align="left" valign="top">
 boolean_T&nbsp;*
+</td>
+<td align="left" valign="top">
+&#160;
 </td>
 <td align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:168')" name="code2model" class="code2model">&lt;Root&gt;/overflowOut</a>
@@ -365,25 +396,31 @@ Inports
 </h3>
 <table width="100%" class="AltRow FirstColumn" cellspacing="0">
 <tr class="heading">
-<th width="42%" align="left" valign="top">
+<th width="38%" align="left" valign="top">
 <b>
 Block Name
 </b>
 
 </th>
-<th width="26%" align="left" valign="top">
+<th width="23%" align="left" valign="top">
 <b>
 Code Identifier
 </b>
 
 </th>
-<th width="21%" align="left" valign="top">
+<th width="19%" align="left" valign="top">
 <b>
 Data Type
 </b>
 
 </th>
-<th width="10%" align="right" valign="top">
+<th width="9%" align="left" valign="top">
+<b>
+Scaling
+</b>
+
+</th>
+<th width="9%" align="right" valign="top">
 <b>
 Dimension
 </b>
@@ -392,37 +429,47 @@ Dimension
 
 </tr>
 <tr class="even">
-<td width="42%" align="left" valign="top">
+<td width="38%" align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:103')" name="code2model" class="code2model">&lt;Root&gt;/rawAccelIn</a>
 </td>
-<td width="26%" align="left" valign="top">
+<td width="23%" align="left" valign="top">
 <i>
 Defined externally
 </i>
 
 </td>
-<td width="21%" align="left" valign="top">
-real32_T
+<td width="19%" align="left" valign="top">
+int16_T
 </td>
-<td width="10%" align="right" valign="top">
+<td width="9%" align="left" valign="top">
+<span title="  DataTypeMode: Fixed-point: binary point scaling
+    Signedness: Signed
+    WordLength: 16
+FractionLength: 14
+">sfix16_En14</span>
+</td>
+<td width="9%" align="right" valign="top">
 1
 </td>
 
 </tr>
 <tr class="odd">
-<td width="42%" align="left" valign="top">
+<td width="38%" align="left" valign="top">
 <a href="matlab:coder.internal.code2model('SmartTrackerFilter:157')" name="code2model" class="code2model">&lt;Root&gt;/valueRead</a>
 </td>
-<td width="26%" align="left" valign="top">
+<td width="23%" align="left" valign="top">
 <i>
 Defined externally
 </i>
 
 </td>
-<td width="21%" align="left" valign="top">
+<td width="19%" align="left" valign="top">
 boolean_T
 </td>
-<td width="10%" align="right" valign="top">
+<td width="9%" align="left" valign="top">
+&#160;
+</td>
+<td width="9%" align="right" valign="top">
 1
 </td>
 

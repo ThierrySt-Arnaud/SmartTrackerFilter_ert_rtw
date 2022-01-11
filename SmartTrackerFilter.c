@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.11
  * Simulink Coder version         : 8.14 (R2018a) 06-Feb-2018
- * C/C++ source code generated on : Mon Jan 10 21:56:51 2022
+ * C/C++ source code generated on : Mon Jan 10 22:52:34 2022
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Custom Processor->Custom
@@ -70,6 +70,7 @@ static void rate_scheduler(RT_MODEL *const rtM)
 static void AllpassMinMult_stepMinMultCasca(real32_T u, const real32_T Z[2],
   real32_T branchCoef_FirstOrderSectionCoe, real32_T *y, real32_T b_Z[2])
 {
+  /* Start for MATLABSystem: '<Root>/Decimator50' */
   *y = (u - Z[1]) * branchCoef_FirstOrderSectionCoe + Z[0];
   b_Z[0] = u;
   b_Z[1] = *y;
@@ -78,83 +79,107 @@ static void AllpassMinMult_stepMinMultCasca(real32_T u, const real32_T Z[2],
 static void SystemProp_matlabCodegenSetA_bg(dsp_simulink_IIRHalfbandDeci_bg *obj,
   boolean_T value)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator100' */
   obj->matlabCodegenIsDeleted = value;
 }
 
 static void SystemCore_release_bg(dsp_simulink_IIRHalfbandDeci_bg *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator100' */
   if ((obj->isInitialized == 1) && obj->isSetupComplete) {
     obj->pNumChannels = -1;
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator100' */
 }
 
 static void SystemCore_delete_bg(dsp_simulink_IIRHalfbandDeci_bg *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator100' */
   SystemCore_release_bg(obj);
 }
 
 static void matlabCodegenHandle_matlabCo_bg(dsp_simulink_IIRHalfbandDeci_bg *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator100' */
   if (!obj->matlabCodegenIsDeleted) {
     SystemProp_matlabCodegenSetA_bg(obj, true);
     SystemCore_delete_bg(obj);
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator100' */
 }
 
 static void SystemProp_matlabCodegenSetAn_b(dsp_simulink_IIRHalfbandDecim_b *obj,
   boolean_T value)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator50' */
   obj->matlabCodegenIsDeleted = value;
 }
 
 static void SystemCore_release_b(dsp_simulink_IIRHalfbandDecim_b *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator50' */
   if ((obj->isInitialized == 1) && obj->isSetupComplete) {
     obj->pNumChannels = -1;
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator50' */
 }
 
 static void SystemCore_delete_b(dsp_simulink_IIRHalfbandDecim_b *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator50' */
   SystemCore_release_b(obj);
 }
 
 static void matlabCodegenHandle_matlabCod_b(dsp_simulink_IIRHalfbandDecim_b *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator50' */
   if (!obj->matlabCodegenIsDeleted) {
     SystemProp_matlabCodegenSetAn_b(obj, true);
     SystemCore_delete_b(obj);
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator50' */
 }
 
 static void SystemProp_matlabCodegenSetAnyP(dsp_simulink_IIRHalfbandDecimat *obj,
   boolean_T value)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator25' */
   obj->matlabCodegenIsDeleted = value;
 }
 
 static void SystemCore_release(dsp_simulink_IIRHalfbandDecimat *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator25' */
   if ((obj->isInitialized == 1) && obj->isSetupComplete) {
     obj->pNumChannels = -1;
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator25' */
 }
 
 static void SystemCore_delete(dsp_simulink_IIRHalfbandDecimat *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator25' */
   SystemCore_release(obj);
 }
 
 static void matlabCodegenHandle_matlabCodeg(dsp_simulink_IIRHalfbandDecimat *obj)
 {
+  /* Start for MATLABSystem: '<Root>/Decimator25' */
   if (!obj->matlabCodegenIsDeleted) {
     SystemProp_matlabCodegenSetAnyP(obj, true);
     SystemCore_delete(obj);
   }
+
+  /* End of Start for MATLABSystem: '<Root>/Decimator25' */
 }
 
 /* Model step function */
-void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
+void SmartTrackerFilter_step(RT_MODEL *const rtM, int16_T rtU_rawAccelIn,
   boolean_T rtU_valueRead, real32_T *rtY_speedOut, real32_T *rtY_gravOut,
   boolean_T *rtY_newValOut, boolean_T *rtY_overflowOut)
 {
@@ -170,7 +195,8 @@ void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
   boolean_T rtb_Memory;
   real32_T rtb_Buffer2[2];
   real32_T rtb_Buffer1[2];
-  real32_T rtb_Buffer[2];
+  int16_T rtb_Buffer[2];
+  real32_T rtb_CastToSingle[2];
   real32_T rtb_DigitalFilter;
   real32_T rtb_gToMperS;
   real32_T tmp[2];
@@ -244,21 +270,26 @@ void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
 
     rtDW->Buffer_outBufPtrIdx = currentOffset + nSamps;
 
-    /* MATLABSystem: '<Root>/Decimator100' */
+    /* DataTypeConversion: '<Root>/Cast To Single' */
+    rtb_CastToSingle[0] = (real32_T)rtb_Buffer[0] * 6.10351562E-5F;
+
+    /* Start for MATLABSystem: '<Root>/Decimator100' incorporates:
+     *  DataTypeConversion: '<Root>/Cast To Single'
+     */
     if (rtDW->obj_m.TunablePropsChanged) {
       rtDW->obj_m.TunablePropsChanged = false;
     }
 
-    c_x = (rtb_Buffer[0] - rtDW->obj_m.pStates.Branch1[1]) *
+    c_x = (rtb_CastToSingle[0] - rtDW->obj_m.pStates.Branch1[1]) *
       rtDW->obj_m.pBranchCoef1.FirstOrderSectionCoeffs +
       rtDW->obj_m.pStates.Branch1[0];
-    rtDW->obj_m.pStates.Branch1[0] = rtb_Buffer[0];
+    rtDW->obj_m.pStates.Branch1[0] = rtb_CastToSingle[0];
     rtDW->obj_m.pStates.Branch1[1] = c_x;
     branch2Carry = rtDW->obj_m.pBranch2Carry;
-    rtDW->obj_m.pBranch2Carry = rtb_Buffer[1];
-    branch2Carry = (c_x + branch2Carry) * 0.5F;
+    rtDW->obj_m.pBranch2Carry = (real32_T)rtb_Buffer[1] * 6.10351562E-5F;
 
-    /* End of MATLABSystem: '<Root>/Decimator100' */
+    /* MATLABSystem: '<Root>/Decimator100' */
+    branch2Carry = (c_x + branch2Carry) * 0.5F;
 
     /* Buffer: '<Root>/Buffer1' */
     nSamps = 4;
@@ -331,25 +362,25 @@ void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
 
     rtDW->Buffer1_outBufPtrIdx = currentOffset + nSamps;
 
-    /* MATLABSystem: '<Root>/Decimator50' */
+    /* Start for MATLABSystem: '<Root>/Decimator50' */
     if (rtDW->obj_d.TunablePropsChanged) {
       rtDW->obj_d.TunablePropsChanged = false;
     }
 
     AllpassMinMult_stepMinMultCasca(rtb_Buffer1[0], rtDW->obj_d.pStates.Branch1,
-      rtDW->obj_d.pBranchCoef1.FirstOrderSectionCoeffs, &c_x, rtb_Buffer);
+      rtDW->obj_d.pBranchCoef1.FirstOrderSectionCoeffs, &c_x, rtb_CastToSingle);
     tmp[0] = rtDW->obj_d.pStates.Branch2[0];
-    rtDW->obj_d.pStates.Branch1[0] = rtb_Buffer[0];
+    rtDW->obj_d.pStates.Branch1[0] = rtb_CastToSingle[0];
     tmp[1] = rtDW->obj_d.pStates.Branch2[1];
-    rtDW->obj_d.pStates.Branch1[1] = rtb_Buffer[1];
+    rtDW->obj_d.pStates.Branch1[1] = rtb_CastToSingle[1];
     AllpassMinMult_stepMinMultCasca(rtb_Buffer1[1], tmp,
       rtDW->obj_d.pBranchCoef2.FirstOrderSectionCoeffs, &y2,
       rtDW->obj_d.pStates.Branch2);
     branch2Carry = rtDW->obj_d.pBranch2Carry;
     rtDW->obj_d.pBranch2Carry = y2;
-    branch2Carry = (c_x + branch2Carry) * 0.5F;
 
-    /* End of MATLABSystem: '<Root>/Decimator50' */
+    /* MATLABSystem: '<Root>/Decimator50' */
+    branch2Carry = (c_x + branch2Carry) * 0.5F;
 
     /* Buffer: '<Root>/Buffer2' */
     nSamps = 4;
@@ -420,7 +451,7 @@ void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
 
     rtDW->Buffer2_outBufPtrIdx = currentOffset + nSamps;
 
-    /* MATLABSystem: '<Root>/Decimator25' */
+    /* Start for MATLABSystem: '<Root>/Decimator25' */
     if (rtDW->obj.TunablePropsChanged) {
       rtDW->obj.TunablePropsChanged = false;
     }
@@ -445,6 +476,7 @@ void SmartTrackerFilter_step(RT_MODEL *const rtM, real32_T rtU_rawAccelIn,
     rtDW->obj.pBranch2Carry = c_x;
 
     /* Gain: '<Root>/gToMperS' incorporates:
+     *  MATLABSystem: '<Root>/Decimator25'
      *  MATLABSystem: '<Root>/Decimator25'
      */
     rtb_gToMperS = (rtb_gToMperS + branch2Carry) * 0.5F * 9.81F;
@@ -626,23 +658,23 @@ void SmartTrackerFilter_initialize(RT_MODEL *const rtM)
     rtDW->Buffer2_inBufPtrIdx = 2;
     rtDW->Buffer2_bufferLength = 2;
 
-    /* InitializeConditions for MATLABSystem: '<Root>/Decimator100' */
+    /* Start for MATLABSystem: '<Root>/Decimator100' */
     rtDW->obj_m.pBranch2Carry = 0.0F;
     rtDW->obj_m.pStates.Branch1[0] = 0.0F;
 
-    /* InitializeConditions for MATLABSystem: '<Root>/Decimator50' */
+    /* Start for MATLABSystem: '<Root>/Decimator50' */
     rtDW->obj_d.pStates.Branch1[0] = 0.0F;
     rtDW->obj_d.pStates.Branch2[0] = 0.0F;
 
-    /* InitializeConditions for MATLABSystem: '<Root>/Decimator100' */
+    /* Start for MATLABSystem: '<Root>/Decimator100' */
     rtDW->obj_m.pStates.Branch1[1] = 0.0F;
 
-    /* InitializeConditions for MATLABSystem: '<Root>/Decimator50' */
+    /* Start for MATLABSystem: '<Root>/Decimator50' */
     rtDW->obj_d.pStates.Branch1[1] = 0.0F;
     rtDW->obj_d.pStates.Branch2[1] = 0.0F;
     rtDW->obj_d.pBranch2Carry = 0.0F;
 
-    /* InitializeConditions for MATLABSystem: '<Root>/Decimator25' */
+    /* Start for MATLABSystem: '<Root>/Decimator25' */
     rtDW->obj.pStates.Branch1[0] = 0.0F;
     rtDW->obj.pStates.Branch1[1] = 0.0F;
     rtDW->obj.pStates.Branch1[2] = 0.0F;
